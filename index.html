@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Doce Dupla</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+    <link rel="icon" href="Imagens/tradicional.png">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+    <img src="Imagens/logo.png" alt="Logo Doce Dupla">
+    <span>Doce Dupla</span>
+</div>
+
+    <nav>
+
+        <a href="#">Início</a>
+
+        <a href="#cardapio">Cardápio</a>
+
+        <a href="#carrinho">Carrinho</a>
+
+        <a href="https://wa.me/5588993561906" target="_blank">
+
+            WhatsApp
+
+        </a>
+
+    </nav>
+
+</header>
+
+<section class="banner">
+
+    <div class="banner-texto">
+
+        <h1>Os melhores brownies da cidade ❤️</h1>
+
+        <p>
+            Feitos artesanalmente com ingredientes selecionados.
+        </p>
+
+        <button onclick="document.getElementById('cardapio').scrollIntoView({behavior:'smooth'})">
+
+            Fazer Pedido
+
+        </button>
+
+    </div>
+
+</section>
+
+<h2 class="titulo" id="cardapio">
+
+    🍫 Nosso Cardápio
+
+</h2>
+
+<section class="produtos">
+
+    <div class="produto">
+
+        <img src="Imagens/tradicional.png" alt="Brownie Tradicional">
+
+        <h2>Brownie Tradicional</h2>
+
+        <p>Chocolate intenso e casquinha crocante.</p>
+
+        <span>R$ 3,00</span>
+
+        <button onclick="adicionarCarrinho('Brownie Tradicional',3)">
+            Adicionar
+        </button>
+
+    </div>
+
+    <div class="produto">
+
+        <img src="Imagens/ninho.jpg" alt="Brownie com Ninho">
+
+        <h2>Brownie de Ninho</h2>
+
+        <p>Brigadeiro de Ninho cremoso.</p>
+
+        <span>R$ 5,00</span>
+
+        <button onclick="adicionarCarrinho('Brownie com Ninho',5)">
+            Adicionar
+        </button>
+
+    </div>
+
+        <div class="produto">
+
+        <img src="Imagens/chocolate.jpeg" alt="Brownie com Chocolate">
+
+        <h2>Brownie de Chocolate</h2>
+
+        <p>Brigadeiro de chocolate cremoso.</p>
+
+        <span>R$ 5,00</span>
+
+        <button onclick="adicionarCarrinho('Brownie com Chocolate',5)">
+            Adicionar
+        </button>
+
+    </div>
+
+    <div class="produto">
+
+        <img src="Imagens/chocolate e mm.png" alt="Brownie de Chocolate com M&M">
+
+        <h2>Brownie de Chocolate com M&M</h2>
+
+        <p>Muito chocolate com M&M.</p>
+
+        <span>R$ 6,50</span>
+
+        <button onclick="adicionarCarrinho('Brownie de Chocolate com M&M',6.5)">
+            Adicionar
+        </button>
+
+    </div>
+
+    <div class="produto">
+
+        <img src="Imagens/ninho com morango.png" alt="Brownie de Ninho com Morango">
+
+        <h2>Brownie de Ninho com Morango</h2>
+
+        <p>Ninho cremoso com morangos.</p>
+
+        <span>R$ 7,00</span>
+
+        <button onclick="adicionarCarrinho('Brownie de Ninho com Morango',7)">
+            Adicionar
+        </button>
+
+    </div>
+
+</section>
+
+<section class="carrinho" id="carrinho">
+
+    <h2>🛒 Carrinho</h2>
+
+    <ul id="listaCarrinho"></ul>
+<div class="entrega-box">
+
+
+</div>
+
+
+<div id="total"></div>
+  
+
+    <h2>Dados do Cliente</h2>
+
+    <div class="formulario">
+
+        <input
+            type="text"
+            id="nome"
+            placeholder="Nome completo"
+            required>
+
+        <input
+            type="text"
+            id="telefone"
+            placeholder="Telefone"
+            required>
+
+        <input
+            type="text"
+            id="endereco"
+            placeholder="Endereço completo"
+            required>
+
+
+<h3>Forma de recebimento</h3>
+
+<select id="tipoEntrega" onchange="atualizarCarrinho()">
+
+    <option value="Entrega">
+        🚚 Entrega (+ R$ 3,00)
+    </option>
+
+    <option value="Retirada">
+        🏪 Retirada no local
+    </option>
+
+</select>
+
+
+
+        <select id="pagamento">
+
+            <option value="Pix">💳 Pix</option>
+            <option value="Dinheiro">💵 Dinheiro</option>
+
+        </select>
+
+        <textarea
+            id="observacao"
+            placeholder="Observações (troco, ponto de referência, etc.)"></textarea>
+
+    </div>
+
+    <button class="finalizar" onclick="finalizarPedido()">
+
+        📲 Finalizar Pedido
+
+    </button>
+
+</section>
+
+<footer>
+
+    <div class="footer-conteudo">
+
+        <h2>🍫 Doce Dupla</h2>
+
+        <p>
+            Os melhores brownies artesanais da região.
+        </p>
+
+        <hr>
+
+        <p>
+            📍 Morada Nova - CE
+        </p>
+
+        <p>
+            📞 (88) 99356-1906
+        </p>
+
+        <p>
+
+            <a href="https://wa.me/5588993561906" target="_blank">
+
+                Chamar no WhatsApp
+
+            </a>
+
+        </p>
+
+        <p>
+
+            Instagram:
+            @docedupla_brownies
+
+        </p>
+
+        <br>
+
+        <small>
+
+            © 2026 Doce Dupla.
+            Todos os direitos reservados.
+
+        </small>
+
+    </div>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

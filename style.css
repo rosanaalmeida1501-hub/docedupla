@@ -1,0 +1,916 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+
+    background:#f8f3ef;
+
+    color:#3b2416;
+
+}
+
+header{
+
+    position:sticky;
+
+    top:0;
+
+    background:#4b2a1d;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 8%;
+
+    z-index:1000;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    font-size:35px;
+    font-weight:bold;
+}
+.logo span{
+    font-family: "Georgia", serif;
+    font-size: 40px;
+    font-weight: bold;
+}
+.logo img{
+    width:130px;
+    height:130px;
+    object-fit:contain;
+}
+
+nav{
+
+    display:flex;
+
+    gap:25px;
+
+}
+
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:17px;
+
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    color:#ffd27a;
+
+}
+
+.banner{
+
+height:430px;
+
+background:
+linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.45)),
+url("Imagens/tradicional.png");
+
+background-size:cover;
+
+background-position:center;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+color:white;
+
+}
+
+.banner h1{
+
+    font-size:55px;
+
+    margin-bottom:15px;
+
+}
+
+.banner p{
+
+    font-size:22px;
+
+    margin-bottom:25px;
+
+}
+
+.banner button{
+
+    background:#ff9800;
+
+    color:white;
+
+    border:none;
+
+    padding:16px 35px;
+
+    border-radius:40px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.banner button:hover{
+
+    transform:scale(1.05);
+
+    background:#ffb300;
+
+}
+
+.titulo{
+
+    text-align:center;
+
+    margin:60px 0 40px;
+
+    font-size:40px;
+
+}
+
+.produtos{
+
+    width:90%;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:35px;
+
+}
+
+.produto{
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+
+    transition:.3s;
+
+}
+
+.produto:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.produto img{
+
+    width:100%;
+
+    height:230px;
+
+    object-fit:cover;
+
+}
+
+.produto h2{
+
+    padding:18px 20px 5px;
+
+}
+
+.produto p{
+
+    padding:0 20px;
+
+    color:#777;
+
+    min-height:50px;
+
+}
+
+.produto span{
+
+    display:block;
+
+    padding:18px 20px;
+
+    font-size:24px;
+
+    color:#6d3f22;
+
+    font-weight:bold;
+
+}
+
+.produto button{
+
+    width:90%;
+
+    margin:0 5% 20px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#5b351f;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    transition:.3s;
+
+}
+
+.produto button:hover{
+
+    background:#7d4a2d;
+
+}
+.sobre{
+
+    width:85%;
+
+    margin:80px auto;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:50px;
+
+}
+
+
+.sobre img{
+
+    width:350px;
+
+    border-radius:25px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+}
+
+
+.sobre div{
+
+    flex:1;
+
+}
+
+
+.sobre h2{
+
+    font-size:40px;
+
+    margin-bottom:20px;
+
+}
+
+
+.sobre p{
+
+    font-size:18px;
+
+    line-height:1.7;
+
+    color:#555;
+
+}
+
+
+
+.contato{
+
+    background:#4b2a1d;
+
+    color:white;
+
+    padding:60px 8%;
+
+    text-align:center;
+
+}
+
+
+.contato h2{
+
+    font-size:38px;
+
+    margin-bottom:20px;
+
+}
+
+
+.contato p{
+
+    font-size:20px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.contato button{
+
+    background:#ff9800;
+
+    border:none;
+
+    padding:15px 35px;
+
+    border-radius:40px;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+}
+
+
+
+.contato button:hover{
+
+    background:#ffb300;
+
+}
+
+
+
+footer{
+
+    background:#2b170f;
+
+    color:white;
+
+    text-align:center;
+
+    padding:20px;
+
+    font-size:15px;
+
+}
+
+
+
+/* BOTÃO FLUTUANTE WHATSAPP */
+
+.whatsapp{
+
+    position:fixed;
+
+    bottom:25px;
+
+    right:25px;
+
+    background:#25d366;
+
+    color:white;
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:32px;
+
+    text-decoration:none;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.3);
+
+    z-index:999;
+
+}
+
+
+
+.whatsapp:hover{
+
+    transform:scale(1.1);
+
+}
+
+
+
+/* RESPONSIVO CELULAR */
+
+
+@media(max-width:768px){
+
+
+header{
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+nav{
+
+    gap:15px;
+
+}
+
+
+.banner{
+
+    height:350px;
+
+}
+
+
+.banner h1{
+
+    font-size:38px;
+
+}
+
+
+.banner p{
+
+    font-size:18px;
+
+}
+
+
+.titulo{
+
+    font-size:32px;
+
+}
+
+
+.sobre{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+
+.sobre img{
+
+    width:90%;
+
+}
+
+
+.produtos{
+
+    width:92%;
+
+}
+
+
+
+}
+/* CARRINHO */
+
+#carrinho{
+
+    width:85%;
+
+    margin:60px auto;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+
+}
+
+
+#carrinho h2{
+
+    text-align:center;
+
+    font-size:35px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+#listaCarrinho{
+
+    list-style:none;
+
+    margin-bottom:25px;
+
+}
+
+
+
+#listaCarrinho li{
+
+    background:#f8f3ef;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    margin-bottom:15px;
+
+    font-size:18px;
+
+}
+
+
+
+#listaCarrinho button{
+
+    border:none;
+
+    background:#5b351f;
+
+    color:white;
+
+    padding:5px 12px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+
+
+#total{
+
+    color:#6d3f22;
+
+    font-size:28px;
+
+}
+
+
+
+
+
+/* FORMULÁRIO */
+
+
+.formulario{
+
+    width:85%;
+
+    margin:40px auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+
+.formulario input,
+.formulario select,
+.formulario textarea{
+
+
+    padding:15px;
+
+    border:1px solid #ddd;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    width:100%;
+
+}
+
+
+
+.formulario textarea{
+
+    height:120px;
+
+    resize:none;
+
+}
+
+
+
+
+.finalizar{
+
+
+    display:block;
+
+    margin:30px auto;
+
+    background:#25d366;
+
+    color:white;
+
+    border:none;
+
+    padding:18px 40px;
+
+    border-radius:40px;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+.finalizar:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* AJUSTE DO CARDÁPIO */
+
+.produtos{
+
+    width:90%;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+}
+
+
+
+.produto{
+
+    width:100%;
+
+}
+
+
+
+.produto img{
+
+    width:100%;
+
+    height:250px;
+
+    object-fit:cover;
+
+}
+
+
+
+@media(max-width:600px){
+
+
+    .produtos{
+
+        width:95%;
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .produto{
+
+        max-width:100%;
+
+    }
+
+
+}
+/* AJUSTE DO CARDÁPIO */
+
+.produtos{
+
+    width:90%;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+}
+
+
+.produto{
+
+    width:100%;
+
+}
+
+
+.produto img{
+
+    width:100%;
+    height:250px;
+
+    object-fit:cover;
+
+}
+
+
+
+@media(max-width:600px){
+
+
+    .produtos{
+
+        width:95%;
+        grid-template-columns:1fr;
+
+    }
+
+
+    .produto{
+
+        max-width:100%;
+
+    }
+
+
+}
+/* CARRINHO ESTILO APP */
+
+.item-carrinho{
+
+    background:#fff7f1;
+
+    padding:15px;
+
+    margin-bottom:12px;
+
+    border-radius:12px;
+
+    box-shadow:0 3px 8px #0002;
+
+}
+
+
+
+.item-carrinho strong{
+
+    display:block;
+
+    font-size:16px;
+
+    margin-bottom:10px;
+
+}
+
+
+
+.controle{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:10px;
+
+}
+
+
+
+.controle button{
+
+    width:32px;
+
+    height:32px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#5b2d16;
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+}
+
+
+
+.controle span{
+
+    font-size:18px;
+
+    font-weight:bold;
+
+}
+
+
+
+.preco-item{
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    margin-bottom:10px;
+
+}
+
+
+
+.remover{
+
+    border:none;
+
+    background:#d9534f;
+
+    color:white;
+
+    padding:7px 12px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+.resumo-pedido{
+    margin-top:15px;
+    padding:15px;
+    background:#fff7f1;
+    border-radius:12px;
+}
+
+
+.resumo-pedido p{
+    margin:5px 0;
+    font-size:16px;
+}
+
+
+.resumo-pedido h3{
+    margin-top:10px;
+    font-size:22px;
+    color:#5b2d16;
+}
