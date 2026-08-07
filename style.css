@@ -907,7 +907,39 @@ nav{
     margin:5px 0;
     font-size:16px;
 }
+@media (max-width: 600px){
 
+    header{
+        padding:15px 5%;
+    }
+
+    .logo{
+        font-size:20px;
+    }
+
+    .logo img{
+        width:40px;
+        height:40px;
+    }
+
+    nav a{
+        font-size:14px;
+    }
+
+    .produto{
+        width:90%;
+        margin:auto;
+    }
+
+    .produto img{
+        max-width:100%;
+    }
+
+    h1{
+        font-size:26px;
+    }
+
+}
 
 .resumo-pedido h3{
     margin-top:10px;
