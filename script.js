@@ -117,7 +117,7 @@ function atualizarCarrinho(){
 
     if(entrega === "Entrega"){
 
-        taxaEntrega = 2;
+        taxaEntrega = 3;
 
     }
 
@@ -296,7 +296,7 @@ function finalizarPedido(){
     let taxaEntrega = 0;
 
 if(entrega === "Entrega"){
-    taxaEntrega = 2;
+    taxaEntrega = 3;
 }
 
 let totalFinal = total + taxaEntrega;
