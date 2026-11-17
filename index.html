@@ -1,283 +1,533 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Doce Dupla</title>
+    <title>Doce Dupla | Doceria Artesanal</title>
 
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 
-    <link rel="icon" href="Imagens/tradicional.png">
-
+    <link rel="icon" href="Imagens/marshmellow.jpeg">
 </head>
 
 <body>
 
-<header>
+    <!-- CABEÇALHO -->
 
-<div class="logo">
-    <img src="Imagens/logo.png" alt="Logo Doce Dupla">
-    <span>Doce Dupla</span>
-</div>
+    <header>
+        <div class="logo">
+            <img src="Imagens/Logo.png" alt="Logo Doce Dupla">
+            <span>Doce Dupla</span>
+        </div>
 
-    <nav>
+        <nav>
+            <a href="#">Início</a>
+            <a href="#cardapio">Cardápio</a>
+            <a href="#brownies">Brownies</a>
+            <a href="#trufas">Trufas</a>
+            <a href="#mousses">Mousses</a>
+            <a href="#carrinho">Carrinho</a>
+            <a href="https://wa.me/5585997991716" target="_blank">WhatsApp</a>
+        </nav>
+    </header>
 
-        <a href="#">Início</a>
 
-        <a href="#cardapio">Cardápio</a>
+    <!-- BANNER -->
 
-        <a href="#carrinho">Carrinho</a>
+    <section class="banner">
+        <div class="banner-texto">
+            <h1>Os melhores doces da cidade ❤️</h1>
 
-        <a href="https://wa.me/5588993561906" target="_blank">
+            <p>
+                Feitos artesanalmente com ingredientes selecionados.
+            </p>
 
-            WhatsApp
+            <button onclick="document.getElementById('cardapio').scrollIntoView({behavior:'smooth'})">
+                Fazer Pedido
+            </button>
+        </div>
+    </section>
 
-        </a>
 
-    </nav>
+<!-- ÁREA DE COMBOS -->
+<section class="area-especial" id="combos">
+    <h2>🍫 Nossos Combos</h2>
+    <p class="descricao-especial">
+        Combinações deliciosas para deixar seu dia mais doce!
+    </p>
 
-</header>
-
-<section class="banner">
-
-    <div class="banner-texto">
-
-        <h1>Os melhores brownies da cidade ❤️</h1>
-
-        <p>
-            Feitos artesanalmente com ingredientes selecionados.
-        </p>
-
-        <button onclick="document.getElementById('cardapio').scrollIntoView({behavior:'smooth'})">
-
-            Fazer Pedido
-
-        </button>
-
+    <div class="grade-especial" id="listaCombos">
+        <!-- Adicione os cards dos combos aqui -->
     </div>
-
 </section>
 
-<h2 class="titulo" id="cardapio">
+<!-- ÁREA DE PROMOÇÕES -->
+<section class="area-especial area-promocoes" id="promocoes">
+    <h2>🔥 Promoções</h2>
+    <p class="descricao-especial">
+        Aproveite nossas ofertas especiais!
+    </p>
 
-    🍫 Nosso Cardápio
+    <div class="grade-especial" id="listaPromocoes"></div>
 
-</h2>
-
-<section class="produtos">
-
-    <div class="produto">
-
-        <img src="Imagens/tradicional.png" alt="Brownie Tradicional">
-
-        <h2>Brownie Tradicional</h2>
-
-        <p>Chocolate intenso e casquinha crocante.</p>
-
-        <span>R$ 3,00</span>
-
-        <button onclick="adicionarCarrinho('Brownie Tradicional',3)">
-            Adicionar
-        </button>
-
-    </div>
-
-    <div class="produto">
-
-        <img src="Imagens/ninho.jpg" alt="Brownie com Ninho">
-
-        <h2>Brownie de Ninho</h2>
-
-        <p>Brigadeiro de Ninho cremoso.</p>
-
-        <span>R$ 5,00</span>
-
-        <button onclick="adicionarCarrinho('Brownie com Ninho',5)">
-            Adicionar
-        </button>
-
-    </div>
-
-        <div class="produto">
-
-        <img src="Imagens/chocolate.jpeg" alt="Brownie com Chocolate">
-
-        <h2>Brownie de Chocolate</h2>
-
-        <p>Brigadeiro de chocolate cremoso.</p>
-
-        <span>R$ 5,00</span>
-
-        <button onclick="adicionarCarrinho('Brownie com Chocolate',5)">
-            Adicionar
-        </button>
-
-    </div>
-
-    <div class="produto">
-
-        <img src="Imagens/chocolate e mm.png" alt="Brownie de Chocolate com M&M">
-
-        <h2>Brownie de Chocolate com M&M</h2>
-
-        <p>Muito chocolate com M&M.</p>
-
-        <span>R$ 6,50</span>
-
-        <button onclick="adicionarCarrinho('Brownie de Chocolate com M&M',6.5)">
-            Adicionar
-        </button>
-
-    </div>
-
-    <div class="produto">
-
-        <img src="Imagens/ninho com morango.png" alt="Brownie de Ninho com Morango">
-
-        <h2>Brownie de Ninho com Morango</h2>
-
-        <p>Ninho cremoso com morangos.</p>
-
-        <span>R$ 7,00</span>
-
-        <button onclick="adicionarCarrinho('Brownie de Ninho com Morango',7)">
-            Adicionar
-        </button>
-
-    </div>
-
+    <p id="semPromocoes" class="sem-promocoes"
+       style="display: none;">
+        🍬 Sem promoções no momento.
+        Mas fique de olho, logo teremos novidades!
+    </p>
 </section>
 
-<section class="carrinho" id="carrinho">
 
-    <h2>🛒 Carrinho</h2>
+<!-- EVENTOS E DATAS ESPECIAIS -->
 
-    <ul id="listaCarrinho"></ul>
-<div class="entrega-box">
+<!-- EVENTOS E DATAS ESPECIAIS -->
+<section class="area-especial" id="eventos">
 
+    <h2>🎉 Eventos e Datas Especiais</h2>
+    <p class="descricao-especial">
+        Momentos especiais merecem doces especiais!
+    </p>
 
-</div>
+    <div class="grade-eventos">
 
+        <!-- ANIVERSÁRIOS -->
+        <div class="card-evento">
+            <h3>🎂 Aniversários</h3>
+            <p>
+                Presentes com brownies decorados
+            </p>
+            <div class="produto">
+                <img src="Imagens/happy1.jpg" alt="Trufa de Ninho">       
+            </div>
+            <div class="produto">
+                <img src="Imagens/happy2.webp" alt="Trufa de Ninho">       
+            </div>
 
-<div id="total"></div>
-  
-
-    <h2>Dados do Cliente</h2>
-
-    <div class="formulario">
-
-        <input
-            type="text"
-            id="nome"
-            placeholder="Nome completo"
-            required>
-
-        <input
-            type="text"
-            id="telefone"
-            placeholder="Telefone"
-            required>
-
-        <input
-            type="text"
-            id="endereco"
-            placeholder="Endereço completo"
-            required>
-
-
-<h3>Forma de recebimento</h3>
-
-<select id="tipoEntrega" onchange="atualizarCarrinho()">
-
-    <option value="Entrega">
-        🚚 Entrega (+ R$ 3,00)
-    </option>
-
-    <option value="Retirada">
-        🏪 Retirada no local
-    </option>
-
-</select>
-
-
-
-        <select id="pagamento">
-
-            <option value="Pix">💳 Pix</option>
-            <option value="Dinheiro">💵 Dinheiro</option>
-
-        </select>
-
-        <textarea
-            id="observacao"
-            placeholder="Observações (troco, ponto de referência, etc.)"></textarea>
-
-    </div>
-
-    <button class="finalizar" onclick="finalizarPedido()">
-
-        📲 Finalizar Pedido
-
-    </button>
-
-</section>
-
-<footer>
-
-    <div class="footer-conteudo">
-
-        <h2>🍫 Doce Dupla</h2>
-
-        <p>
-            Os melhores brownies artesanais da região.
-        </p>
-
-        <hr>
-
-        <p>
-            📍 Morada Nova - CE
-        </p>
-
-        <p>
-            📞 (88) 99356-1906
-        </p>
-
-        <p>
-
-            <a href="https://wa.me/5588993561906" target="_blank">
-
-                Chamar no WhatsApp
-
+            <a href="https://api.whatsapp.com/send?phone=5588993561906&text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20doces%20de%20anivers%C3%A1rio."
+               target="_blank">
+                Solicitar orçamento
             </a>
+        </div>
 
-        </p>
+        <!-- NATAL E RÉVEILLON -->
+        <div class="card-evento card-festas">
 
-        <p>
+            <h3>🎄 Natal e Réveillon</h3>
 
-            Instagram:
-            @docedupla_brownies
+            <p>
+                Nossas delícias especiais para deixar
+                suas comemorações ainda mais doces!
+            </p>
 
-        </p>
+            <h4>Confira nossas opções:</h4>
 
-        <br>
+            <!-- CARROSSEL DE PRODUTOS -->
+            <div class="carrossel-festas">
 
-        <small>
+                <!-- TRAVESSA 1 -->
+                <div class="produto-festa">
+                    <img src="Imagens/travessa brownie.jpeg"
+                         alt="Travessa opção 1">
 
-            © 2026 Doce Dupla.
-            Todos os direitos reservados.
+                    <h4>Travessa 1</h4>
+                    <p>Uma delícia especial para compartilhar.</p>
 
-        </small>
+                    <a href="https://api.whatsapp.com/send?phone=558597991716&text=Ol%C3%A1!%20Gostaria%20de%20encomendar%20a%20Travessa%201."
+                       target="_blank">
+                        Encomendar
+                    </a>
+                </div>
+
+                <!-- TRAVESSA 2 -->
+                <div class="produto-festa">
+                    <img src="Imagens/travessa morango.jpeg"
+                         alt="Travessa opção 2">
+
+                    <h4>Travessa 2</h4>
+                    <p>Perfeita para adoçar sua comemoração.</p>
+
+                    <a href="https://api.whatsapp.com/send?phone=558597991716&text=Ol%C3%A1!%20Gostaria%20de%20encomendar%20a%20Travessa%202."
+                       target="_blank">
+                        Encomendar
+                    </a>
+                </div>
+
+                <!-- TRAVESSA 3 -->
+                <div class="produto-festa">
+                    <img src="Imagens/travessa ouro.jpeg"
+                         alt="Travessa opção 3">
+
+                    <h4>Travessa 3</h4>
+                    <p>Uma opção deliciosa para sua mesa.</p>
+
+                    <a href="https://api.whatsapp.com/send?phone=5588993561906&text=Ol%C3%A1!%20Gostaria%20de%20encomendar%20a%20Travessa%203."
+                       target="_blank">
+                        Encomendar
+                    </a>
+                </div>
+
+                <!-- ÁRVORE DE BROWNIE -->
+                <div class="produto-festa">
+                    <img src="Imagens/arvore.jpeg"
+                         alt="Árvore de brownie">
+
+                    <h4>Árvore de Brownie</h4>
+                    <p>Uma decoração deliciosa para sua festa!</p>
+
+                    <a href="https://api.whatsapp.com/send?phone=558597991716&text=Ol%C3%A1!%20Gostaria%20de%20encomendar%20a%20%C3%81rvore%20de%20Brownie."
+                       target="_blank">
+                        Encomendar
+                    </a>
+                </div>
+
+            </div>
+        </div>
 
     </div>
 
-</footer>
+    <p class="aviso-eventos">
+        💛 Encomendas mediante disponibilidade e consulta antecipada.
+    </p>
 
-<script src="script.js"></script>
+</section>
+
+
+    <!-- CARDÁPIO -->
+
+    <main id="cardapio">
+
+        <h2 class="titulo">🍫 Nosso Cardápio</h2>
+
+        <p class="subtitulo-cardapio">
+            Escolha seus favoritos e deixe seu dia mais doce!
+        </p>
+
+        <!-- ATALHOS DAS CATEGORIAS -->
+
+        <div class="atalhos-categorias">
+            <a href="#brownies">🍫 Brownies</a>
+            <a href="#trufas">🍬 Trufas</a>
+            <a href="#mousses">🥄 Mousses</a>
+        </div>
+
+
+        <!-- BROWNIES -->
+
+        <section class="categoria" id="brownies">
+
+            <h3 class="titulo-categoria">🍫 Brownies</h3>
+
+            <div class="produtos">
+
+                <div class="produto" data-status="disponivel">
+                    <img src="Imagens/tradicional.webp" alt="Brownie Tradicional">
+                    <h2>Brownie Tradicional</h2>
+                    <p>Chocolate intenso e casquinha crocante.</p>
+                    <span>R$ 3,00</span>
+                    <button onclick="adicionarCarrinho('Brownie Tradicional',3)">
+                        🛒 Adicionar
+                    </button>
+                </div>
+
+                <div class="produto" data-status="esgotado">
+                    <img src="Imagens/ninho.jpg" alt="Brownie com Ninho">
+                    <h2>Brownie com Ninho</h2>
+                    <p>Brownie com recheio cremoso de Ninho.</p>
+                    <span>R$ 4,50</span>
+                    <button onclick="adicionarCarrinho('Brownie com Ninho',4.5)">
+                        🛒 Adicionar
+                    </button>
+                </div>
+
+                <div class="produto">
+                    <img src="Imagens/chocolate.jpeg" alt="Brownie com Chocolate">
+                    <h2>Brownie com Chocolate</h2>
+                    <p>Brigadeiro de chocolate cremoso.</p>
+                    <span>R$ 4,50</span>
+                    <button onclick="adicionarCarrinho('Brownie com Chocolate',4.5)">
+                        🛒 Adicionar
+                    </button>
+                </div>
+
+                <div class="produto">
+                    <img src="Imagens/chocolate e mm.png" alt="Brownie de Chocolate com M&M">
+                    <h2>Brownie de Chocolate com M&M</h2>
+                    <p>Muito chocolate com a crocância dos M&M.</p>
+                    <span>R$ 4,50</span>
+                    <button onclick="adicionarCarrinho('Brownie de Chocolate com M&M',4.5)">
+                        🛒 Adicionar
+                    </button>
+                </div>
+
+                <div class="produto">
+                    <img src="Imagens/ninho com morango.png" alt="Brownie de Ninho com Morango">
+                    <h2>Brownie de Ninho com Morango</h2>
+                    <p>Ninho cremoso com morangos.</p>
+                    <span>R$ 7,00</span>
+                    <button onclick="adicionarCarrinho('Brownie de Ninho com Morango',7)">
+                        🛒 Adicionar
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- TRUFAS -->
+
+        <section class="categoria" id="trufas">
+
+            <h3 class="titulo-categoria">🍬Trufas</h3>
+
+            <div class="produtos">
+
+                <div class="produto">
+                    <img src="Imagens/truninho.jpeg" alt="Trufa de Ninho">
+                    <h2>Trufa de Ninho</h2>
+                    <p>Recheio cremoso de Ninho.</p>
+                    <span>R$ 3,00</span>
+                    <button onclick="adicionarCarrinho('Trufa de Ninho',3)">
+                        🛒 Adicionar
+                    </button>
+                </div>
+
+                <div class="produto">
+                    <img src="Imagens/trubb.jpeg" alt="Trufa de Chocolate Branco com Brigadeiro">
+                    <h2>Trufa de Chocolate Branco com Brigadeiro</h2>
+                    <p>Combinação de chocolate branco e brigadeiro.</p>
+                    <span>R$ 3,00</span>
+                    <button onclick="adicionarCarrinho('Trufa de Chocolate Branco com Brigadeiro',3)">
+                        🛒 Adicionar
+                    </button>
+                </div>
+
+                <div class="produto">
+                    <img src="Imagens/maracuja.jpeg" alt="Trufa de Maracujá">
+                    <h2>Trufa de Maracujá</h2>
+                    <p>Recheio de maracujá com sabor especial.</p>
+                    <span>R$ 3,00</span>
+                    <button onclick="adicionarCarrinho('Trufa de Maracujá',3)">
+                        🛒 Adicionar
+                    </button>
+                </div>
+
+                <div class="produto">
+                    <img src="Imagens/limao.jpeg" alt="Trufa de Limão">
+                    <h2>Trufa de Limão</h2>
+                    <p>Um toque cítrico e delicioso.</p>
+                    <span>R$ 3,00</span>
+                    <button onclick="adicionarCarrinho('Trufa de Limão',3)">
+                        🛒 Adicionar
+                    </button>
+                </div>
+
+                <div class="produto">
+                    <img src="Imagens/morango.jpeg" alt="Trufa de Morango">
+                    <h2>Trufa de Morango</h2>
+                    <p>Recheio sabor morango.</p>
+                    <span>R$ 3,00</span>
+                    <button onclick="adicionarCarrinho('Trufa de Morango',3)">
+                        🛒 Adicionar
+                    </button>
+                </div>
+
+                <div class="produto">
+                    <img src="Imagens/oreo.jpeg" alt="Trufa de Oreo">
+                    <h2>Trufa de Oreo</h2>
+                    <p>Recheio especial com biscoito Oreo.</p>
+                    <span>R$ 4,00</span>
+                    <button onclick="adicionarCarrinho('Trufa de Oreo',4)">
+                        🛒 Adicionar
+                    </button>
+                </div>
+
+                <div class="produto">
+                    <img src="Imagens/brigadeiro.jpeg" alt="Trufa de Brigadeiro">
+                    <h2>Trufa de Brigadeiro</h2>
+                    <p>Clássica, com recheio de brigadeiro.</p>
+                    <span>R$ 3,00</span>
+                    <button onclick="adicionarCarrinho('Trufa de Brigadeiro',3)">
+                        🛒 Adicionar
+                    </button>
+                </div>
+
+                <div class="produto">
+                    <img src="Imagens/trumm.jpeg" alt="Trufa de Brigadeiro">
+                    <h2>Trufa de Brigadeiro</h2>
+                    <p>Mais uma opção deliciosa de brigadeiro.</p>
+                    <span>R$ 3,00</span>
+                    <button onclick="adicionarCarrinho('Trufa de Brigadeiro',3)">
+                        🛒 Adicionar
+                    </button>
+                </div>
+
+                <div class="produto">
+                    <img src="Imagens/trumobri.jpeg" alt="Trufa de Morango com Brigadeiro">
+                    <h2>Trufa de Morango com Brigadeiro</h2>
+                    <p>Morango com brigadeiro em uma combinação especial.</p>
+                    <span>R$ 4,00</span>
+                    <button onclick="adicionarCarrinho('Trufa de Morango com Brigadeiro',4)">
+                        🛒 Adicionar
+                    </button>
+                </div>
+
+                <div class="produto">
+                    <img src="Imagens/marshmellow.jpeg" alt="Trufa de Marshmallow">
+                    <h2>Trufa de Marshmallow</h2>
+                    <p>Recheio macio e delicioso de marshmallow.</p>
+                    <span>R$ 4,00</span>
+                    <button onclick="adicionarCarrinho('Trufa de Marshmallow',4)">
+                        🛒 Adicionar
+                    </button>
+                </div>
+
+                                <div class="produto">
+                    <img src="Imagens/trumorangocravejado.jpeg" alt="Trufa de Morango Cravejada">
+                    <h2>Trufa de Morango Cravejada</h2>
+                    <p>Uma deliciosa trufa com cobertura especial.</p>
+                    <span>R$ 5,00</span>
+                    <button onclick="adicionarCarrinho('Trufa de Morango Cravejada',5)">
+                        🛒 Adicionar
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- MOUSSES -->
+
+        <section class="categoria" id="mousses">
+
+            <h3 class="titulo-categoria">🥄 Mousses</h3>
+
+            <div class="produtos">
+
+                <div class="produto">
+                    <img src="Imagens/mousse maracuja.jpg" alt="Mousse de Maracujá">
+                    <h2>Mousse de Maracujá</h2>
+                    <p>Leve, cremoso e com sabor de maracujá.</p>
+                    <span>R$ 4,00</span>
+                    <button onclick="adicionarCarrinho('Mousse de Maracujá',4)">
+                        🛒 Adicionar
+                    </button>
+                </div>
+
+                <div class="produto">
+                    <img src="Imagens/mousse abacaxi.jpg" alt="Mousse de Abacaxi">
+                    <h2>Mousse de Abacaxi</h2>
+                    <p>Uma sobremesa cremosa e refrescante.</p>
+                    <span>R$ 4,00</span>
+                    <button onclick="adicionarCarrinho('Mousse de Abacaxi',4)">
+                        🛒 Adicionar
+                    </button>
+                </div>
+
+                <div class="produto">
+                    <img src="Imagens/mousse morango.jpg" alt="Mousse de Morango">
+                    <h2>Mousse de Morango</h2>
+                    <p>Doce, leve e com sabor de morango.</p>
+                    <span>R$ 4,00</span>
+                    <button onclick="adicionarCarrinho('Mousse de Morango',4)">
+                        🛒 Adicionar
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- CARRINHO -->
+
+    <section class="carrinho" id="carrinho">
+
+        <h2>🛒 Carrinho</h2>
+
+        <ul id="listaCarrinho"></ul>
+
+        <div id="total"></div>
+
+        <h2>Dados do Cliente</h2>
+
+        <div class="formulario">
+
+            <input
+                type="text"
+                id="nome"
+                placeholder="Nome:"
+                required>
+
+            <input
+                type="text"
+                id="endereco"
+                placeholder="Endereço completo:">
+
+            <h3>Forma de recebimento</h3>
+
+            <select id="tipoEntrega" onchange="atualizarCarrinho()">
+                <option value="Entrega">🚚 Entrega (+ R$ 2,00)</option>
+                <option value="Retirada">🏪 Retirada no local</option>
+            </select>
+
+            <select id="pagamento">
+                <option value="Pix">💠 Pix</option>
+                <option value="Dinheiro">💵 Dinheiro</option>
+                <option value="crédito">💳 Cartão de crédito</option>
+                <option value="débito">💳 Cartão de débito</option>
+            </select>
+
+            <textarea
+                id="observacao"
+                placeholder="Observações (troco, ponto de referência etc.)"></textarea>
+
+        </div>
+
+        <button class="finalizar" onclick="finalizarPedido()">
+            📲 Finalizar Pedido
+        </button>
+
+    </section>
+
+
+    <!-- RODAPÉ -->
+
+    <footer>
+
+        <div class="footer-conteudo">
+
+            <h2>🍫 Doce Dupla</h2>
+
+            <p>Doces artesanais feitos com carinho.</p>
+
+            <hr>
+
+            <p>📍 Morada Nova - CE</p>
+
+            <p>📞 (88) 99356-1906</p>
+
+            <p>
+                <a href="https://wa.me/5585997991716" target="_blank">
+                    Chamar no WhatsApp
+                </a>
+            </p>
+
+            <p>Instagram: @doceria_docedupla</p>
+
+            <br>
+
+            <small>
+                © 2026 Doce Dupla. Todos os direitos reservados.
+            </small>
+
+        </div>
+
+    </footer>
 
 </body>
-
 </html>
